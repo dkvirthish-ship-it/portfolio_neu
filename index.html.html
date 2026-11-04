@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>DK Virthish — Biotechnology Researcher</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0A1628;
+    --navy-mid: #112240;
+    --blue: #1565C0;
+    --blue-bright: #2979FF;
+    --blue-light: #E3EEFF;
+    --white: #FFFFFF;
+    --off-white: #F7F9FC;
+    --grey: #8899AA;
+    --line: rgba(21,101,192,0.15);
+    --ff-display: 'Playfair Display', Georgia, serif;
+    --ff-body: 'DM Sans', sans-serif;
+    --ff-mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--ff-body);
+    background: var(--white);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-logo {
+    font-family: var(--ff-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    color: var(--blue);
+    text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--blue-bright); }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4rem 5rem 5rem;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-tag {
+    font-family: var(--ff-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--blue);
+  }
+  .hero-name {
+    font-family: var(--ff-display);
+    font-size: clamp(3.5rem, 6vw, 6rem);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+  }
+  .hero-name span { color: var(--blue-bright); font-style: italic; }
+  .hero-role {
+    font-family: var(--ff-display);
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    font-weight: 700;
+    font-style: italic;
+    color: var(--grey);
+    margin-bottom: 2rem;
+  }
+  .hero-desc {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: #445566;
+    max-width: 460px;
+    margin-bottom: 3rem;
+  }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 0.9rem 2rem;
+    font-family: var(--ff-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--blue-bright); transform: translateY(-2px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--navy);
+    border: 1.5px solid var(--navy);
+    padding: 0.9rem 2rem;
+    font-family: var(--ff-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--blue-bright); color: var(--blue-bright); transform: translateY(-2px); }
+
+  .hero-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: var(--navy);
+    overflow: hidden;
+  }
+  .hero-right-inner {
+    position: relative;
+    z-index: 2;
+    padding: 4rem;
+    text-align: right;
+  }
+  .hero-stat {
+    margin-bottom: 2.5rem;
+    border-right: 3px solid var(--blue-bright);
+    padding-right: 1.5rem;
+  }
+  .hero-stat-num {
+    font-family: var(--ff-display);
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+  }
+  .hero-stat-num span { color: var(--blue-bright); }
+  .hero-stat-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-top: 0.3rem;
+    font-family: var(--ff-mono);
+  }
+  .hero-bg-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(41,121,255,0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(41,121,255,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .hero-bg-circle {
+    position: absolute;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(41,121,255,0.12) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* ─── SECTION COMMONS ─── */
+  section { padding: 6rem 5rem; }
+  .section-label {
+    font-family: var(--ff-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+    max-width: 3rem;
+  }
+  .section-title {
+    font-family: var(--ff-display);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--navy);
+    margin-bottom: 3rem;
+  }
+
+  /* ─── ABOUT ─── */
+  #about {
+    background: var(--off-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .about-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #334455;
+    margin-bottom: 1.2rem;
+  }
+  .about-contact {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.85rem;
+    color: var(--navy);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-item:hover { color: var(--blue-bright); }
+  .contact-dot {
+    width: 6px; height: 6px;
+    background: var(--blue-bright);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .skill-chip {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 0.8rem 1rem;
+    font-size: 0.78rem;
+    font-family: var(--ff-mono);
+    color: var(--navy-mid);
+    letter-spacing: 0.05em;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .skill-chip:hover { border-color: var(--blue-bright); color: var(--blue-bright); }
+
+  /* ─── EXPERIENCE ─── */
+  #experience { background: var(--white); }
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
+  .exp-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    padding: 3rem 0;
+    border-top: 1px solid var(--line);
+    position: relative;
+  }
+  .exp-item:last-child { border-bottom: 1px solid var(--line); }
+  .exp-date {
+    font-family: var(--ff-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--blue);
+    margin-bottom: 0.5rem;
+  }
+  .exp-org {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--grey);
+    line-height: 1.4;
+  }
+  .exp-role {
+    font-family: var(--ff-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 1rem;
+  }
+  .exp-points { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .exp-points li {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: #445566;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .exp-points li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--blue-bright);
+    font-size: 0.75rem;
+  }
+
+  /* ─── PROJECT ─── */
+  #project { background: var(--navy); }
+  #project .section-label { color: #FFFFFF; }
+  #project .section-label::after { background: rgba(41,121,255,0.3); }
+  #project .section-title { color: var(--white); }
+  #project .project-period,
+  #project .project-name,
+  #project .project-desc,
+  #project .tag,
+  #project .method-name,
+  #project .method-desc { color: #FFFFFF; }
+
+  .project-card {
+    background: var(--navy-mid);
+    border: 1px solid rgba(41,121,255,0.2);
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .project-card + .project-card { margin-top: 2rem; }
+  .project-card:hover { border-color: var(--blue-bright); }
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--blue-bright);
+  }
+  .project-period {
+    font-family: var(--ff-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--blue-bright);
+    margin-bottom: 1rem;
+  }
+  .project-name {
+    font-family: var(--ff-display);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+  .project-desc {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #8899BB;
+    margin-bottom: 2rem;
+  }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
+  .tag {
+    font-family: var(--ff-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+    border: 1px solid rgba(41,121,255,0.4);
+    padding: 0.3rem 0.7rem;
+  }
+  .project-methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    border-top: 1px solid rgba(41,121,255,0.15);
+    padding-top: 2rem;
+  }
+  .method-name {
+    font-family: var(--ff-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--blue-bright);
+    margin-bottom: 0.3rem;
+  }
+  .method-desc {
+    font-size: 0.82rem;
+    color: #6677AA;
+    line-height: 1.5;
+  }
+
+  /* ─── EDUCATION ─── */
+  #education { background: var(--white); }
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .edu-card {
+    padding: 2.5rem;
+    border: 1px solid var(--line);
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .edu-card:hover { border-color: var(--blue-bright); transform: translateY(-4px); }
+  .edu-card.primary { border-color: var(--blue); }
+  .edu-year {
+    font-family: var(--ff-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--blue);
+    margin-bottom: 0.8rem;
+  }
+  .edu-degree {
+    font-family: var(--ff-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+  }
+  .edu-uni {
+    font-size: 0.82rem;
+    color: var(--grey);
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+  }
+  .edu-score {
+    display: inline-block;
+    font-family: var(--ff-mono);
+    font-size: 0.72rem;
+    background: var(--blue-light);
+    color: var(--blue);
+    padding: 0.3rem 0.7rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* ─── CERTIFICATIONS ─── */
+  #certifications { background: var(--off-white); }
+  .cert-list { display: flex; flex-direction: column; gap: 0; }
+  .cert-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--line);
+    gap: 2rem;
+    transition: padding-left 0.25s;
+  }
+  .cert-item:first-child { border-top: 1px solid var(--line); }
+  .cert-item:hover { padding-left: 1rem; }
+  .cert-name {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--navy);
+  }
+  .cert-provider {
+    font-family: var(--ff-mono);
+    font-size: 0.72rem;
+    color: var(--grey);
+    margin-top: 0.2rem;
+    letter-spacing: 0.05em;
+  }
+  .cert-date {
+    font-family: var(--ff-mono);
+    font-size: 0.72rem;
+    color: var(--blue);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  /* ─── WEBINARS ─── */
+  #webinars { background: var(--white); }
+  .webinar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+  .webinar-card {
+    border: 1px solid var(--line);
+    padding: 1.6rem 1.8rem;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .webinar-card:hover { border-color: var(--blue-bright); transform: translateY(-3px); }
+  .webinar-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+  }
+  .webinar-card.color-a { background: #EEF4FF; } .webinar-card.color-a::before { background: #5B8FE8; }
+  .webinar-card.color-b { background: #F3EEFF; } .webinar-card.color-b::before { background: #9B6FD4; }
+  .webinar-card.color-c { background: #EDFAF3; } .webinar-card.color-c::before { background: #3CAB73; }
+  .webinar-card.color-d { background: #FFF0F3; } .webinar-card.color-d::before { background: #E05C7A; }
+  .webinar-card.color-e { background: #FFF8EC; } .webinar-card.color-e::before { background: #D4892A; }
+  .webinar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .webinar-title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.35;
+  }
+  .webinar-date {
+    font-family: var(--ff-mono);
+    font-size: 0.68rem;
+    color: var(--blue);
+    white-space: nowrap;
+    letter-spacing: 0.08em;
+  }
+  .webinar-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .webinar-tag {
+    font-family: var(--ff-mono);
+    font-size: 0.62rem;
+    color: #556677;
+    border: 1px solid rgba(21,101,192,0.2);
+    background: rgba(255,255,255,0.6);
+    padding: 0.2rem 0.55rem;
+    letter-spacing: 0.04em;
+    border-radius: 2px;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy);
+    color: var(--white);
+    padding: 4rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .footer-name {
+    font-family: var(--ff-display);
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--white);
+  }
+  .footer-name span { color: var(--blue-bright); font-style: italic; }
+  .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .footer-links a {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--grey);
+    text-decoration: none;
+    font-family: var(--ff-mono);
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--blue-bright); }
+  .footer-copy {
+    font-size: 0.72rem;
+    color: rgba(68,85,102,0.5);
+    font-family: var(--ff-mono);
+    letter-spacing: 0.08em;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    #hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 4rem 2rem 3rem; }
+    .hero-right { min-height: 280px; padding: 2rem; }
+    .hero-right-inner { display: flex; gap: 2rem; padding: 2rem; text-align: left; }
+    .hero-stat { border-right: none; border-left: 3px solid var(--blue-bright); padding-right: 0; padding-left: 1rem; }
+    section { padding: 4rem 1.5rem; }
+    #about { grid-template-columns: 1fr; gap: 2.5rem; }
+    .skills-grid { grid-template-columns: 1fr 1fr; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+    .project-methods { grid-template-columns: 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .webinar-grid { grid-template-columns: 1fr; }
+    footer { padding: 3rem 1.5rem; flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">DK Virthish</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#project">Research</a></li>
+    <li><a href="#publication">Publication</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#webinars">Webinars</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Biotechnology · Bioinformatics · Electronics · Research</div>
+    <h1 class="hero-name">DK<br><span>Virthish</span></h1>
+    <p class="hero-role">Researcher & Analyst</p>
+    <p class="hero-desc">A curiosity-driven biotechnology student pursuing research at the intersection of biochemistry, bioinformatics, low-cost hardware, and community health — turning molecular data into meaningful insights.</p>
+    <div class="hero-ctas">
+      <a href="mailto:dkvirthish@gmail.com" class="btn-primary" style="text-transform:none;letter-spacing:0.04em;">dkvirthish@gmail.com</a>
+      <a href="tel:+919361085412" class="btn-outline" style="text-transform:none;letter-spacing:0.04em;">+91 93610 85412</a>
+      <a href="https://github.com/dkvirthish-ship-it" target="_blank" rel="noopener" class="btn-outline" style="text-transform:none;letter-spacing:0.04em;">GitHub</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-bg-circle"></div>
+    <div class="hero-right-inner">
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span class="count-up" data-target="374" data-decimals="0">0</span><span>+</span></div>
+        <div class="hero-stat-label">Phytochemicals Screened</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span class="count-up" data-target="8.1" data-decimals="1">0</span></div>
+        <div class="hero-stat-label">Current CGPA</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num"><span class="count-up" data-target="13" data-decimals="0">0</span></div>
+        <div class="hero-stat-label">Certifications</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-text fade-up">
+    <div class="section-label">About</div>
+    <h2 class="section-title">Driven by<br>curiosity &<br>persistence.</h2>
+    <p>A learning-oriented person who grows through challenges, learns from problems, and finds opportunities in difficult situations. Motivated by curiosity and persistence, I actively seek new skills and experiences to contribute meaningfully in academic, research, and community-focused environments.</p>
+  </div>
+  <div class="fade-up" style="transition-delay:0.2s">
+    <div class="section-label">Core Skills</div>
+    <h2 class="section-title" style="font-size:1.6rem;margin-bottom:1.5rem;">Technical<br>Competencies</h2>
+    <div class="skills-grid">
+      <div class="skill-chip">UV-Vis Spectrophotometry</div>
+      <div class="skill-chip">Molecular Docking</div>
+      <div class="skill-chip">AutoDock Vina / PyRx</div>
+      <div class="skill-chip">SwissADME</div>
+      <div class="skill-chip">CHARMM-GUI</div>
+      <div class="skill-chip">BIOVIA Discovery Studio</div>
+      <div class="skill-chip">Agarose Gel Electrophoresis</div>
+      <div class="skill-chip">Kjeldahl Analysis</div>
+      <div class="skill-chip">Folin-Ciocalteu</div>
+      <div class="skill-chip">Genetic Screening</div>
+      <div class="skill-chip">Python</div>
+      <div class="skill-chip">Excel</div>
+      <div class="skill-chip">PCR</div>
+      <div class="skill-chip">Arduino / C++</div>
+      <div class="skill-chip">Circuit Design</div>
+      <div class="skill-chip">Sensor Calibration</div>
+    </div>
+    <div class="section-label" style="margin-top:2rem;">General Skills</div>
+    <div class="skills-grid">
+      <div class="skill-chip">Organization & Time Management</div>
+      <div class="skill-chip">Problem-solving & Hardware Debugging</div>
+      <div class="skill-chip">Independent & Team Work</div>
+      <div class="skill-chip">Detail-oriented Multitasking</div>
+      <div class="skill-chip">Research Writing & Documentation</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label fade-up">Experience</div>
+  <h2 class="section-title fade-up">Where I've<br>Applied My Skills</h2>
+  <div class="exp-list">
+    <div class="exp-item fade-up">
+      <div class="exp-meta">
+        <div class="exp-date">Jun 2025 — Jul 2025</div>
+        <div class="exp-org" style="color: #0A1628;" >United Planters Association of Southern India (UPASI)<br>Coonoor, TN</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Research Intern</div>
+        <ul class="exp-points">
+          <li>Conducted comprehensive tea quality analysis using FSSR parameters — water extract, crude fiber content, total ash, and water-soluble ash determinations.</li>
+          <li>Performed biochemical analysis including catechins estimation, caffeine analysis, amino acid determination (ninhydrin), and carbohydrate quantification (Anthrone method).</li>
+          <li>Executed quality parameter testing for Theaflavin (TF), Thearubigin (TR), HPS, and Total Liquor Colour (TLC) via spectrophotometric methods.</li>
+          <li>Analyzed tea processing methods — orthodox and CTC manufacturing for black, green, and white tea varieties.</li>
+          <li>Gained hands-on experience with advanced analytical techniques including UV-Vis spectrophotometry, Kjeldahl protein analysis, and Folin-Ciocalteu polyphenol estimation.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item fade-up" style="transition-delay:0.15s">
+      <div class="exp-meta">
+        <div class="exp-date">Jun 2024 — Jul 2024</div>
+        <div class="exp-org" style="color: #0A1628;">NAWA — Nilgiris Adivasi Welfare Association</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Community Development Intern</div>
+        <ul class="exp-points">
+          <li>Partnered with an ICMR laboratory to conduct genetic screening for blood disorders including sickle cell anemia and beta thalassemia, serving vulnerable populations.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT -->
+<section id="project">
+  <div class="section-label fade-up">Research Projects</div>
+  <h2 class="section-title fade-up">Research &amp;<br>Projects</h2>
+
+  <div class="project-card fade-up">
+    <div class="project-period">Oct 2026 — Nov 2026</div>
+    <div class="project-name">Low-Cost Arduino-Based Mini Bioreactor System</div>
+    <p class="project-desc">A fermentor monitoring basic parameters — temperature and culture growth — built on an Arduino Uno for under ₹300 in components, designed for yeast fermentation.</p>
+    <div class="project-tags">
+      <span class="tag">Arduino Uno</span>
+      <span class="tag">Fermentation</span>
+      <span class="tag">Sensors</span>
+      <span class="tag">Arduino C++</span>
+      <span class="tag">Data Logging</span>
+    </div>
+    <div class="project-methods">
+      <div class="method-item">
+        <div class="method-name">Temperature Sensing</div>
+        <div class="method-desc">10 kΩ NTC thermistor in a voltage-divider circuit, converted to °C with the Beta (Steinhart–Hart) equation, median filtering and single-point calibration.</div>
+      </div>
+      <div class="method-item">
+        <div class="method-name">DIY Optical Density Sensor</div>
+        <div class="method-desc">Red LED and LDR on opposite sides of the vessel; absorbance calculated as log₁₀(blank/sample) to track culture growth.</div>
+      </div>
+      <div class="method-item">
+        <div class="method-name">Firmware</div>
+        <div class="method-desc">Arduino C++ for data acquisition, averaging, serial commands (blank re-calibration), and 5-second logging.</div>
+      </div>
+      <div class="method-item">
+        <div class="method-name">Debugging</div>
+        <div class="method-desc">Resolved noisy ADC readings, wiring faults, and thermistor parameter mismatches using diagnostic sketches and multimeter checks.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card fade-up">
+    <div class="project-period">Sep 2025 — Apr 2026</div>
+    <div class="project-name">In Silico Screening of Phytochemicals Against IP-10 (CXCL10)</div>
+    <p class="project-desc">A computational investigation to identify lead phytochemicals targeting human IP-10 protein (PDB ID: 1O80), a chemokine implicated in neuroinflammation and cerebral malaria severity. Large-scale virtual screening of 374 phytochemicals was conducted to assess therapeutic potential.</p>
+    <div class="project-tags">
+      <span class="tag">Virtual Screening</span>
+      <span class="tag">Molecular Docking</span>
+      <span class="tag">ADME Profiling</span>
+      <span class="tag">Phytochemicals</span>
+      <span class="tag">Neuroinflammation</span>
+      <span class="tag">Cerebral Malaria</span>
+      <span class="tag">Molecular Dynamics</span>
+    </div>
+    <div class="project-methods">
+      <div class="method-item">
+        <div class="method-name">Virtual Screening & Docking</div>
+        <div class="method-desc">AutoDock Vina algorithm within PyRx — binding affinities across phenolics, terpenoids, and alkaloids.</div>
+      </div>
+      <div class="method-item">
+        <div class="method-name">ADME & Pharmacokinetics</div>
+        <div class="method-desc">SwissADME for physicochemical properties, Lipinski's Rule of Five, and GI absorption profiling.</div>
+      </div>
+      <div class="method-item">
+        <div class="method-name">Protein & Ligand Preparation</div>
+        <div class="method-desc">AutoDock Tools & CHARMM-GUI — high-resolution accuracy (2.00 Å) with proper residue folding.</div>
+      </div>
+      <div class="method-item">
+        <div class="method-name">Data Analysis & Visualization</div>
+        <div class="method-desc">BIOVIA Discovery Studio for protein-ligand interaction analysis and favorable pose visualization.</div>
+      </div>
+      <div class="method-item">
+        <div class="method-name">Molecular Dynamics (ongoing)</div>
+        <div class="method-desc">Validating the stability of the top protein-ligand complexes.</div>
+      </div>
+    </div>
+    <div class="project-period" style="margin:2rem 0 0;font-style:italic;">Status: Docking and ADME screening completed; MD simulation in progress.</div>
+  </div>
+
+  <div class="project-card fade-up">
+    <div class="project-period">Sep 2023 — Oct 2023</div>
+    <div class="project-name">Proximity Sensor Development Using Arduino</div>
+    <p class="project-desc">An IR-reflection proximity sensor built with Arduino, IR LEDs, and a photodiode to detect object presence and measure distance.</p>
+    <div class="project-tags">
+      <span class="tag">Arduino</span>
+      <span class="tag">IR Sensing</span>
+      <span class="tag">Photodiode</span>
+      <span class="tag">Circuit Design</span>
+    </div>
+    <div class="project-methods">
+      <div class="method-item">
+        <div class="method-name">Circuit Integration</div>
+        <div class="method-desc">Functional circuit combining Arduino, IR LEDs, and a photodiode for seamless system interaction.</div>
+      </div>
+      <div class="method-item">
+        <div class="method-name">Programming & Debugging</div>
+        <div class="method-desc">Arduino code to process photodiode signals and determine object proximity.</div>
+      </div>
+      <div class="method-item">
+        <div class="method-name">Calibration</div>
+        <div class="method-desc">Tuned IR LED intensity and system sensitivity for accurate distance measurement.</div>
+      </div>
+      <div class="method-item">
+        <div class="method-name">Hands-on Learning</div>
+        <div class="method-desc">Experience with IR-based sensor systems, component functionality, and circuit design.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATION -->
+<section id="publication" style="background:var(--off-white);">
+  <div class="section-label fade-up">Publication</div>
+  <h2 class="section-title fade-up">Book<br>Chapter</h2>
+  <div class="edu-card primary fade-up" style="max-width:780px;background:var(--white);">
+    <div class="edu-year">STATUS — UNDER REVIEW</div>
+    <div class="edu-degree">"Food Waste and Its Implications for Global Food Security"</div>
+    <div class="edu-uni">In: <em>Food Safety and Security in the Present World: Challenges and Innovations</em></div>
+    <div class="edu-uni" style="font-size:0.9rem;line-height:1.7;color:#445566;">Examines the economic, environmental, and social impact of global food waste across the supply chain, and reviews policy, technological, and community-level strategies to reduce it in line with sustainability goals.</div>
+    <span class="edu-score">Under review · Yet to be published</span>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label fade-up">Education</div>
+  <h2 class="section-title fade-up">Academic<br>Background</h2>
+  <div class="edu-grid">
+    <div class="edu-card primary fade-up">
+      <div class="edu-year">Aug 2023 — Present</div>
+      <div class="edu-degree">B.tech Biotechnology</div>
+      <div class="edu-uni">Lovely Professional University<br>Phagwara, Punjab</div>
+      <span class="edu-score">CGPA: 8.1</span>
+    </div>
+    <div class="edu-card fade-up" style="transition-delay:0.1s">
+      <div class="edu-year">Apr 2023</div>
+      <div class="edu-degree">Senior Secondary (Class 12, ISC)</div>
+      <div class="edu-uni">International Community School & Junior College<br>Kotagiri, The Nilgiris, TN</div>
+      <span class="edu-score">86% · Science (PCMB)</span>
+    </div>
+    <div class="edu-card fade-up" style="transition-delay:0.2s">
+      <div class="edu-year">May 2021</div>
+      <div class="edu-degree">Secondary (Class 10, ICSE)</div>
+      <div class="edu-uni">International Community School & Junior College<br>Kotagiri, The Nilgiris, TN</div>
+      <span class="edu-score">82%</span>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="section-label fade-up">Certifications</div>
+  <h2 class="section-title fade-up">Continuous<br>Learning</h2>
+  <div class="cert-list">
+    <div class="cert-item fade-up" style="transition-delay:0.00s">
+      <div>
+        <div class="cert-name">Whole Genome Sequencing of Bacterial Genomes: Tools and Applications</div>
+        <div class="cert-provider">Coursera</div>
+      </div>
+      <div class="cert-date">Jul 2026</div>
+    </div>
+    <div class="cert-item fade-up" style="transition-delay:0.03s">
+      <div>
+        <div class="cert-name">Introduction to Good Manufacturing Practices (GMP)</div>
+        <div class="cert-provider">Pharm Uni</div>
+      </div>
+      <div class="cert-date">Jan 2026</div>
+    </div>
+    <div class="cert-item fade-up" style="transition-delay:0.06s">
+      <div>
+        <div class="cert-name">Prompt Engineering for ChatGPT</div>
+        <div class="cert-provider">Coursera — Vanderbilt University</div>
+      </div>
+      <div class="cert-date">Oct 2025</div>
+    </div>
+    <div class="cert-item fade-up" style="transition-delay:0.09s">
+      <div>
+        <div class="cert-name">Molecular Docking</div>
+        <div class="cert-provider">Discovery Boulevard</div>
+      </div>
+      <div class="cert-date">Jul 2025</div>
+    </div>
+    <div class="cert-item fade-up" style="transition-delay:0.12s">
+      <div>
+        <div class="cert-name">Introduction to Genomic Technologies</div>
+        <div class="cert-provider">Coursera — Johns Hopkins University</div>
+      </div>
+      <div class="cert-date">Feb 2025</div>
+    </div>
+    <div class="cert-item fade-up" style="transition-delay:0.15s">
+      <div>
+        <div class="cert-name">Introduction to Systems Biology</div>
+        <div class="cert-provider">Coursera — Mount Sinai</div>
+      </div>
+      <div class="cert-date">Apr 2024</div>
+    </div>
+    <div class="cert-item fade-up" style="transition-delay:0.18s">
+      <div>
+        <div class="cert-name">Cybersecurity Analyst Simulation</div>
+        <div class="cert-provider">Forage — Mastercard</div>
+      </div>
+      <div class="cert-date">Mar 2024</div>
+    </div>
+    <div class="cert-item fade-up" style="transition-delay:0.21s">
+      <div>
+        <div class="cert-name">Genetic Sciences Simulation</div>
+        <div class="cert-provider">Forage — Genentech</div>
+      </div>
+      <div class="cert-date">Feb 2024</div>
+    </div>
+    <div class="cert-item fade-up" style="transition-delay:0.24s">
+      <div>
+        <div class="cert-name">Bioinformatics Methods I</div>
+        <div class="cert-provider">Coursera — University of Toronto</div>
+      </div>
+      <div class="cert-date">Feb 2024</div>
+    </div>
+    <div class="cert-item fade-up" style="transition-delay:0.27s">
+      <div>
+        <div class="cert-name">Python</div>
+        <div class="cert-provider">Cisco — Skill for All</div>
+      </div>
+      <div class="cert-date">Jan 2024</div>
+    </div>
+    <div class="cert-item fade-up" style="transition-delay:0.30s">
+      <div>
+        <div class="cert-name">Python for Data Science</div>
+        <div class="cert-provider">Great Learning</div>
+      </div>
+      <div class="cert-date">Oct 2023</div>
+    </div>
+    <div class="cert-item fade-up" style="transition-delay:0.30s">
+      <div>
+        <div class="cert-name">Excel</div>
+        <div class="cert-provider">Great Learning</div>
+      </div>
+      <div class="cert-date">Oct 2023</div>
+    </div>
+    <div class="cert-item fade-up" style="transition-delay:0.30s">
+      <div>
+        <div class="cert-name">Public Speaking</div>
+        <div class="cert-provider">Professional Development</div>
+      </div>
+      <div class="cert-date">Oct 2023</div>
+    </div>
+  </div>
+</section>
+
+<!-- WEBINARS -->
+<section id="webinars">
+  <div class="section-label fade-up">Webinars & Conferences</div>
+  <h2 class="section-title fade-up">Webinars &<br>Conferences</h2>
+  <div class="webinar-grid">
+    <div class="webinar-card color-a fade-up" style="transition-delay:0.00s">
+      <div class="webinar-header">
+        <div class="webinar-title">BioInnovate International Conference (Poster Presentation)</div>
+        <div class="webinar-date">Oct 2025</div>
+      </div>
+      <div class="webinar-tags">
+        <span class="webinar-tag">Poster Presentation</span>
+        <span class="webinar-tag">International Conference</span>
+      </div>
+    </div>
+    <div class="webinar-card color-b fade-up" style="transition-delay:0.04s">
+      <div class="webinar-header">
+        <div class="webinar-title">Shaping the Future of Personalized Medicine</div>
+        <div class="webinar-date">Jul 2025</div>
+      </div>
+      <div class="webinar-tags">
+        <span class="webinar-tag">Genomics</span>
+        <span class="webinar-tag">Digital Health</span>
+        <span class="webinar-tag">Precision Medicine</span>
+        <span class="webinar-tag">Pharmacogenomics</span>
+      </div>
+    </div>
+    <div class="webinar-card color-c fade-up" style="transition-delay:0.08s">
+      <div class="webinar-header">
+        <div class="webinar-title">NGS for Drug-Resistant TB</div>
+        <div class="webinar-date">Jul 2025</div>
+      </div>
+      <div class="webinar-tags">
+        <span class="webinar-tag">Next-Gen Sequencing</span>
+        <span class="webinar-tag">Diagnostic Integration</span>
+        <span class="webinar-tag">National TB Programs</span>
+      </div>
+    </div>
+    <div class="webinar-card color-d fade-up" style="transition-delay:0.12s">
+      <div class="webinar-header">
+        <div class="webinar-title">AI in Chemical Synthesis</div>
+        <div class="webinar-date">Jul 2025</div>
+      </div>
+      <div class="webinar-tags">
+        <span class="webinar-tag">Computer-Aided Synthesis</span>
+        <span class="webinar-tag">Green Chemistry</span>
+        <span class="webinar-tag">Route Optimization</span>
+      </div>
+    </div>
+    <div class="webinar-card color-e fade-up" style="transition-delay:0.16s">
+      <div class="webinar-header">
+        <div class="webinar-title">Precision Medicine Conclave</div>
+        <div class="webinar-date">Apr 2025</div>
+      </div>
+      <div class="webinar-tags">
+        <span class="webinar-tag">Precision Medicine</span>
+        <span class="webinar-tag">Conclave</span>
+      </div>
+    </div>
+    <div class="webinar-card color-a fade-up" style="transition-delay:0.20s">
+      <div class="webinar-header">
+        <div class="webinar-title">AI Tools in Biological Research</div>
+        <div class="webinar-date">Mar 2025</div>
+      </div>
+      <div class="webinar-tags">
+        <span class="webinar-tag">AlphaFold</span>
+        <span class="webinar-tag">Drug Discovery</span>
+        <span class="webinar-tag">Computational Biology</span>
+        <span class="webinar-tag">Structural Biology</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" style="background:var(--off-white);">
+  <div class="section-label fade-up">Achievements & Leadership</div>
+  <h2 class="section-title fade-up">Recognition &<br>Leadership</h2>
+  <div class="edu-grid">
+    <div class="edu-card primary fade-up" style="background:var(--white);">
+      <div class="edu-year">GATE 2026</div>
+      <div class="edu-degree">GATE Biotechnology 2026 — Qualified</div>
+      <div class="edu-uni">All India Rank (AIR) 1639</div>
+      <span class="edu-score">Score: 428 · Marks: 31.33 / 100</span>
+    </div>
+    <div class="edu-card fade-up" style="background:var(--white);transition-delay:0.1s">
+      <div class="edu-year">2023</div>
+      <div class="edu-degree">House Captain, Pluvia House</div>
+      <div class="edu-uni">International Community School & Junior College<br>Kotagiri, The Nilgiris, TN</div>
+      <span class="edu-score">Led the house to the Annual Sports Day 2023 Overall Trophy</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-name">DK <span>Virthish</span></div>
+    <div class="footer-copy" style="color:#FFFFFF;">Biotechnology Researcher · Kotagiri, India</div>
+  </div>
+  <div class="footer-links">
+    <a href="mailto:dkvirthish@gmail.com" style="color: #FFFFFF;text-transform:none;">dkvirthish@gmail.com</a>
+<a href="tel:+919361085412" style="color: #FFFFFF;text-transform:none;">+91 93610 85412</a>
+<a href="https://github.com/dkvirthish-ship-it" target="_blank" rel="noopener" style="color: #FFFFFF;text-transform:none;">GitHub</a>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // ─── COUNT-UP ANIMATION ───
+  function animateCountUp(el) {
+    const target = parseFloat(el.dataset.target);
+    const decimals = parseInt(el.dataset.decimals) || 0;
+    const duration = 1800;
+    const start = performance.now();
+
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = eased * target;
+      el.textContent = current.toFixed(decimals);
+      if (progress < 1) requestAnimationFrame(update);
+      else el.textContent = target.toFixed(decimals);
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.count-up').forEach(el => {
+          if (!el.dataset.animated) {
+            el.dataset.animated = 'true';
+            animateCountUp(el);
+          }
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const heroRight = document.querySelector('.hero-right');
+  if (heroRight) heroObserver.observe(heroRight);
+</script>
+</body>
+</html>
